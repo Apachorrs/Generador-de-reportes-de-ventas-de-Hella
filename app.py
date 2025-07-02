@@ -10,6 +10,7 @@ import seaborn as sns
 import numpy as np
 import base64
 from functools import partial
+from PIL import Image
 
 # ===========================================
 # CONFIGURACIÓN INICIAL DE LA PÁGINA
@@ -165,16 +166,17 @@ st.markdown(
 col1, col2, col3 = st.columns([3, 3, 1])
 with col2:
     try:
-        st.image("D:\Hella\Reports\Hella-1.webp", width=200)
-    except:
-        st.warning("No se pudo cargar la imagen del logo")
+        image = Image.open("Hella-1.webp")
+        st.image(image, width=200)
+    except Exception as e:
+        st.warning(f"No se pudo cargar la imagen del logo: {e}")
 
 st.markdown("<h1 style='text-align: center;'>Generador de Reportes Estadístico Hella</h1>", unsafe_allow_html=True)
 
 # Instrucciones
 st.markdown("""
 ### Instrucciones:
-1. **Sube tu archivo Excel (Crosstab)** (formatos .xlsx o .xls)
+1. **Sube el archivo Excel** (formatos .xlsx o .xls)
 2. **Selecciona los filtros** para personalizar el reporte
 3. **Revisa los datos filtrados**
 4. **Genera y descarga** el reporte en PDF
