@@ -16,7 +16,7 @@ from PIL import Image
 # CONFIGURACIÓN INICIAL DE LA PÁGINA
 # ===========================================
 st.set_page_config(
-    page_title="Generador de Reportes Hella",
+    page_title="Generador de reportes Hella",
     page_icon="📊",
     layout="wide"
 )
@@ -171,7 +171,7 @@ with col2:
     except Exception as e:
         st.warning(f"No se pudo cargar la imagen del logo: {e}")
 
-st.markdown("<h1 style='text-align: center;'>Generador de Reportes Estadístico Hella</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Generador de reportes de ventas de Hella</h1>", unsafe_allow_html=True)
 
 # Instrucciones
 st.markdown("""
@@ -260,7 +260,7 @@ if uploaded_file is not None:
             st.write("")
             col1, col2, col3 = st.columns([3, 3, 1])
             with col2:                                  
-                generar = st.button("Generar Informe", type="primary", disabled=not selected_months)
+                generar = st.button("Generar Reporte", type="primary", disabled=not selected_months)
 
             if generar and selected_months:
                 with st.spinner("Calculando comparativa..."):
@@ -347,7 +347,7 @@ if uploaded_file is not None:
                         pass
 
                     c.setFont("Helvetica-Bold", 20)
-                    c.drawCentredString(width/2, height-270, "Reporte Ventas Hella")
+                    c.drawCentredString(width/2, height-270, "Reporte de ventas de Hella")
                     c.setFont("Helvetica", 12)
                     c.drawCentredString(width/2, height-300, f"Generado el: {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
