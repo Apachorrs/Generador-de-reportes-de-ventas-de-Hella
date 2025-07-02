@@ -341,7 +341,7 @@ if uploaded_file is not None:
                     width, height = letter
 
                     try:
-                        logo_path = "D:\Hella\Reports\Hella-1.webp"
+                        logo_path = "Hella-1.webp"
                         c.drawImage(logo_path, (width-250)/2, height-250, width=250, height=125, preserveAspectRatio=True)
                     except:
                         pass
